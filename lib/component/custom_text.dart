@@ -8,13 +8,15 @@ class CustomText extends StatelessWidget {
   final double? fontSize;
   final FontWeight? fontWeight;
   final TextAlign? textAlign;
+  final TextDecoration? textDecoration;
   const CustomText(
       {Key? key,
       required this.text,
       this.color,
       this.fontSize,
       this.fontWeight,
-      this.textAlign})
+      this.textAlign,
+      this.textDecoration})
       : super(key: key);
 
   @override
@@ -22,8 +24,12 @@ class CustomText extends StatelessWidget {
     return Text(
       text,
       textAlign: textAlign,
-      style:
-          TextStyle(color: color, fontSize: fontSize, fontWeight: fontWeight),
+      style: TextStyle(
+        color: color,
+        decoration: textDecoration,
+        fontSize: fontSize,
+        fontWeight: fontWeight,
+      ),
     );
   }
 }

@@ -6,6 +6,7 @@ import 'package:shopping/component/custom_aseet_image.dart';
 import 'package:shopping/component/custom_button.dart';
 import 'package:shopping/component/custom_text.dart';
 import 'package:shopping/core/app_color.dart';
+import 'package:shopping/ui/login_page.dart';
 
 class ExporePage extends StatelessWidget {
   const ExporePage({Key? key}) : super(key: key);
@@ -26,7 +27,7 @@ class ExporePage extends StatelessWidget {
           const SizedBox(height: 30),
           _description(),
           const SizedBox(height: 30),
-          _exploreBtn()
+          _exploreBtn(context)
         ],
       ),
     );
@@ -67,7 +68,7 @@ Clothes here''',
     );
   }
 
-  Widget _exploreBtn() {
+  Widget _exploreBtn(BuildContext context) {
     return CustomButton(
         width: double.infinity,
         padding: const EdgeInsets.symmetric(vertical: 20),
@@ -76,6 +77,9 @@ Clothes here''',
           color: Colors.white,
           fontSize: 12,
         ),
-        onPressed: () {});
+        onPressed: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => const LoginPage()));
+        });
   }
 }
